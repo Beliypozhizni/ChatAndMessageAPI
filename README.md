@@ -68,6 +68,9 @@
 ```
 docker compose up --build
 ```
+API доступен по адресу: http://127.0.0.1:8000
+
+Swagger UI: http://127.0.0.1:8000/docs
 
 ---
 
@@ -118,4 +121,9 @@ poetry install
 ```
 python -m src.main
 ```
+
+API доступен по адресу: http://127.0.0.1:8000
+
+Swagger UI: http://127.0.0.1:8000/docs
+
 ---
