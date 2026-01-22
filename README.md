@@ -96,7 +96,20 @@ $env:ENV_FILE = ".env.test"
 pytest
 ```
 Для управления зависимостями в проекте используется Poetry.
-Установка зависимостей:
+
+Следует создать виртуальную среду и активировать её (Windows):
+```
+python -m venv .venv
+.\.venv\Scripts\activate
+```
+
+Установить Poetry:
+```
+pip install --upgrade pip
+pip install poetry
+```
+
+Установить зависимости:
 ```
 poetry install
 ```
