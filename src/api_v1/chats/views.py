@@ -24,7 +24,7 @@ async def get_chat_with_last_messages(
     )
 
 
-@router.post('/', response_model=ChatReadBase)
+@router.post('/', response_model=ChatReadBase, status_code=status.HTTP_201_CREATED)
 async def create_chat(
         chat: ChatCreate,
         session: AsyncSession = Depends(db_helper.session_dependency)

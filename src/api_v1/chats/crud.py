@@ -6,6 +6,7 @@ from src.api_v1.chats.schemas import ChatCreate
 from src.api_v1.messages.crud import get_last_messages
 from src.core.models.chat import Chat
 from src.core.models.message import Message
+from src.utils.logger import logger
 
 
 async def create_chat(
@@ -16,6 +17,7 @@ async def create_chat(
     session.add(chat)
     await session.commit()
     await session.refresh(chat)
+    logger.info(f"Chat created: id={chat.id} title_len={len(chat.title)}")
     return chat
 
 
@@ -57,3 +59,4 @@ async def delete_chat(session: AsyncSession, chat_id: int) -> None:
 
     await session.delete(chat)
     await session.commit()
+    logger.info(f"Chat deleted: id={chat_id}")

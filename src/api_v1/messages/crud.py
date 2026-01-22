@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.api_v1.messages.schemas import MessageCreate
 from src.core.models.message import Message
+from src.utils.logger import logger
 
 
 async def create_message(
@@ -14,6 +15,7 @@ async def create_message(
     session.add(message)
     await session.commit()
     await session.refresh(message)
+    logger.info(f"Message created: id={message.id} chat_id={message.chat_id} text_len={len(message.text)}")
     return message
 
 
