@@ -89,8 +89,20 @@ cp .env.example .env.test
 
 ```
 $env:ENV_FILE = ".env"
+```
 or
+```
 $env:ENV_FILE = ".env.test"
 pytest
+```
+Для управления зависимостями в проекте используется Poetry.
+Установка зависимостей:
+```
+poetry install
+```
+
+Запуск:
+```
+python -m src.main
 ```
 ---

@@ -4,7 +4,7 @@ import pytest
 @pytest.mark.anyio
 async def test_create_chat(client):
     response = await client.post("/api/v1/chats/", json={"title": "Test chat"})
-    assert response.status_code == 200, response.text
+    assert response.status_code == 201, response.text
 
     data = response.json()
     assert data["id"] > 0
